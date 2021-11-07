@@ -1,0 +1,6 @@
+@function color ($color-type){
+    @return map-get($theme-colors,$color-type);
+}
+@function font ($font-type){
+    @return map-get($theme-fonts,$font-type )
+}

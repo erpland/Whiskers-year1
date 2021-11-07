@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f2abbed0d4.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media-queries.css">
+<script src="/js/default-data.js"></script>
+<script src="js/cart.js"></script>
+<script defer src="js/navbar.js"></script>
+
+    <title>Whiskers</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="home.html">Whiskers</a>
+      <ul id="outer-links">
+        <li class="nav-item dropdown" id="cart-icon" data-toggle="modal" data-target="#cart-modal" aria-haspopup="true"
+          aria-expanded="true">
+          <a href="#!" class="nav-link navbar-link-2 waves-effect">
+            <span class="badge badge-pill red">0</span>
+            <i class="fas fa-shopping-cart pl-0"></i>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item dropdown avatar">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="" class="rounded-circle" style="height: 34px;" alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="user.html">Profile</a>
+            <a class="dropdown-item" href="#!" onclick="Disconnect()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+        aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="basicExampleNav1">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a href="home.html" class="nav-link waves-effect">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link waves-effect">
+              Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taste.html" class="nav-link waves-effect">
+              Taste
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link waves-effect">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link waves-effect">
+              About Us
+            </a>
+          </li>
+          <span id="not-logged">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect nav-login">
+                Login
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a href="register.html" class="nav-link waves-effect nav-register">
+                Register
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+    </nav>
+    <div class="modal fade" id="cart-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4 id="cart-msg" class="cart-msg"></h4>
+            <h4 id="empty-cart">Your Cart Is Empty...</h4>
+            <div class="cart-desc">
+              <b>Item</b>
+              <b>QTY</b>
+              <b>Price</b>
+            </div>
+            <div id="cart-items">
+              
+              <!-- <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p id="qty">1</p>
+                <div class="price">
+                  <p class="crossed-price">120$</p>
+                  <p class="sale-price">100$</p>
+                </div>
+              </div>
+              <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p>3</p>
+                <p>120$</p>
+              </div> -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="cart-total">
+              <h5>Total:</h5>
+              <h5 id="total-qty"></h5>
+              <h5 id="total-price">123$</h5>
+            </div>
+            <div id="cart-btns">
+              <button type="button" class="btn btn-secondary" onclick="ClearCart()">Clear</button>
+              <button type="button" class="btn btn-primary" onclick="BuyCart()">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main id="taste-container">
+        <div class="taste-box1">
+            <h1>Glassware</h1>
+            <p>Choosing the correct whisky glass can really help to improve the drinkers enjoyment and there’s a shape and style of glass for every whisky fan.</p>
+            <button onclick='location.href = "article-glasses.html";'>Learn More</button>   
+              </div>
+        <div class="taste-box2">
+            <h1>Nosing</h1>
+            <p>Surprisingly, simply sticking your nose in the glass won’t yield the best results. We find out the top techniques using your senses to heighten your experience.
+            </p>
+            <button onclick='location.href = "article-smell.html";'>Learn More</button>
+          
+
+          </div>
+        <div class="taste-box3">
+            <h1>Taste</h1>
+            <p>The goal is to evaluate and enjoy the whiskey, not get smashed. Sip a little bit at a time (no shooting!) and consider using a spit bucket, just as you would for a wine tasting.</p>
+            <button onclick='location.href = "article-taste.html";'>Learn More</button>
+        </div>
+
+    </main>
+    <footer>
+      <p>Whiskers is a registered trademark
+        © 2020 World Whisky Day</p>
+        <div class="social">
+          <a target="_blank" href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+          <a target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+          <a target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+          <a target="_blank" href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

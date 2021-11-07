@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/f2abbed0d4.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media-queries.css">
+<script src="/js/default-data.js"></script>
+<script src="js/cart.js"></script>
+<script defer src="js/navbar.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Whiskers</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="home.html">Whiskers</a>
+      <ul id="outer-links">
+        <li class="nav-item dropdown" id="cart-icon" data-toggle="modal" data-target="#cart-modal" aria-haspopup="true"
+          aria-expanded="true">
+          <a href="#!" class="nav-link navbar-link-2 waves-effect">
+            <span class="badge badge-pill red">0</span>
+            <i class="fas fa-shopping-cart pl-0"></i>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item dropdown avatar">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="" class="rounded-circle" style="height: 34px;" alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="user.html">Profile</a>
+            <a class="dropdown-item" href="#!" onclick="Disconnect()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+        aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="basicExampleNav1">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a href="home.html" class="nav-link waves-effect">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link waves-effect">
+              Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taste.html" class="nav-link waves-effect">
+              Taste
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link waves-effect">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link waves-effect">
+              About Us
+            </a>
+          </li>
+          <span id="not-logged">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect nav-login">
+                Login
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a href="register.html" class="nav-link waves-effect nav-register">
+                Register
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+    </nav>
+    <div class="modal fade" id="cart-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4 id="cart-msg" class="cart-msg"></h4>
+            <h4 id="empty-cart">Your Cart Is Empty...</h4>
+            <div class="cart-desc">
+              <b>Item</b>
+              <b>QTY</b>
+              <b>Price</b>
+            </div>
+            <div id="cart-items">
+              
+              <!-- <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p id="qty">1</p>
+                <div class="price">
+                  <p class="crossed-price">120$</p>
+                  <p class="sale-price">100$</p>
+                </div>
+              </div>
+              <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p>3</p>
+                <p>120$</p>
+              </div> -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="cart-total">
+              <h5>Total:</h5>
+              <h5 id="total-qty"></h5>
+              <h5 id="total-price">123$</h5>
+            </div>
+            <div id="cart-btns">
+              <button type="button" class="btn btn-secondary" onclick="ClearCart()">Clear</button>
+              <button type="button" class="btn btn-primary" onclick="BuyCart()">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main id="process-container">
+        <div class="process-nav">
+            <h1>The Process Of <br> Distillation.</h1>
+                <div id="summary">
+                    <p class="collapse" id="collapseSummary">
+                        Whisky has been distilled in Scotland for hundreds of years. There is some evidence to show that the art of distilling could have been brought to the country by Christian missionary monks, but it has never been proved that Highland farmers did not themselves discover how to distil spirits from their surplus barley.
+                        The earliest historical reference to whisky comes much later, Mr J Marshall Robb, in his book ‘Scotch Whisky’, says: ‘The oldest reference to whisky occurs in the Scottish Exchequer Rolls for 1494, where there is an entry of ‘eight bolls of malt to Friar John Cor wherewith to make aquavitae’. A boll was an old Scottish measure of not more than six bushels. (One bushel is equivalent to 25.4 kilograms)
+                        When King James IV was in Inverness during September 1506, his Treasurer’s Accounts had entries for the 15th and 17th of the month respectively: ‘For aqua vite to the King. . .’ and ‘For ane flacat of aqua vite to the King. . .’. lt is probable that the aquavitae in this case was spirit for drinking.
+                        The earliest reference to a distillery in the Acts of the Scottish Parliament appears to be in 1690, when mention is made of the famous Ferintosh distillery owned by Duncan Forbes of Culloden.
+
+                        There is also a reference to distilling in a private house in the parish of Gamrie in Banffshire in 1614. This occurs in the Register of the Privy Council, where a man accused of the crime of breaking into a private house, combined with assault, was said to have knocked over some ‘aquavitie’.
+                        One of the earliest references to ‘uiskie’ occurs in the funeral account of a Highland laird about 1618.
+                        An unpublished letter of February 1622, written by Sir Duncan Campbell of Glenorchy to the Earl of Mar, reported that certain officers sent to Glenorchy by the King had been given the best entertainment that the season and the country allowed. It stated: ‘For they wantit not wine nor aquavite.’ This ‘aquavite’ was no doubt locally distilled whisky.
+                        Another writer affirms that aquavitae occasionally formed part of the rent paid for Highland farms, at any rate in Perthshire, but no actual date is given for this practice.
+                    </p>
+                    <a class="collapsed" data-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary"></a>
+                </div>
+                <a id="top"></a>
+
+            
+            <div class="process-buttons-container">
+                <div class="process-nav-button">
+                  <a href="#malting"><img src="images/Malting-sqr.jpg" alt="">
+                    <h5>Malting</h5></a>
+                    
+                </div>
+                <div class="process-nav-button">
+                  <a href="#Mashing"><img src="images/Mashing-sqr.jpg" alt="">
+                    <h5>Mashing</h5></a>
+                </div>
+                <div class="process-nav-button">
+                  <a href="#Fermentation"><img src="images/Fermentation-sqr.jpg" alt="">
+                    <h5>Fermentation</h5></a>
+                </div>
+                <div class="process-nav-button">
+                  <a href="#Distillation"><img src="images/Distillation-sqr.jpg" alt="">
+                    <h5>Distillation</h5></a>
+                </div>
+                <div class="process-nav-button">
+                  <a href="#Maturation"><img src="images/Maturation-sqr.jpg" alt="">
+                    <h5>Maturation</h5></a>
+                </div>
+                
+        </div>
+    </div>
+    <a id="malting"></a>
+        <div class="stage-container">
+            <img src="images/Malting.jpg" alt="">
+              <div class="stage-text">
+                <h2>STAGE 01: <br> <b>Malting</b></h2>
+                <p>The first step in making whiskey is malting, which involves soaking the barley for 2-3 days in warm water. It will then be spread on the floor of the malting house and turned over on a regular basis in order to maintain a constant temperature. During this process the barley converts the starch into soluble sugars to make alcohol. When the barley has started to germinate and small shoots start growing, the germination is stopped by drying it in a kiln.</p>
+                <a href="#top">Go To Top</a>
+              </div>
+        </div>
+        <a id="Mashing"></a>
+        <div class="stage-container">
+            <img src="images/Mashing.jpg" alt="">
+              <div class="stage-text">
+                <h2>STAGE 02: <br> <b>Mashing</b></h2>
+                <p>The next step is when the ground down malt, which is called “grist” is added to the warm water so that the soluble sugars can be extracted. The water is usually from a reliable natural source – which is why many of the world’s distilleries are located next to a lake or a river. The water source also has an impact on the final taste of the whisky, as there can be minerals within the rocks of the river or late that pass into the water.
+                When the malt and water is combined it is called the “mash” and it will be placed into a large vessel and stirred for several hours. During this time the sugars dissolve and they are drawn to the bottom of the mash and extracted. The resulting liquid is called “wort”.</p>
+                <a href="#top">Go To Top</a>
+              </div>
+            
+        </div>
+        <a id="Fermentation"></a>
+            <div class="stage-container">
+                <img src="images/Fermentation.jpg" alt="">
+                  <div class="stage-text">
+                    <h2>STAGE 03: <br> <b>Fermentation</b></h2>
+                    <p>Fermentation occurs when the mash/wort meets yeast, which gobbles up all the sugars in the liquid and converts them to alcohol. This takes place in giant vats, often called washbacks. The process can take anywhere from 48 to 96 hours, with different fermentation times and yeast strains resulting in a spectrum of diverse flavors. The resulting beer-like liquid—called distiller’s beer or wash—clocks in at around 7%-10% ABV before it goes into the still.</p>
+                    <a href="#top">Go To Top</a>
+                  </div>
+            </div>
+            <a id="Distillation"></a>
+                <div class="stage-container">
+                    <img src="images/Distillation.jpg" alt="">
+                      <div class="stage-text">
+                        <h2>STAGE 04: <br> <b>Distillation</b></h2>
+                        <p>The wash is distilled twice - first in the wash still, to separate the alcohol from the water, yeast and residue called pot ale - the solids of which are also saved for use in animal feeds.
+                        The distillate from the wash still, known as low wines, and containing about 20% alcohol by volume, then goes to the spirit still for the second distillation. The more volatile compounds which distil off first - the foreshots, and the final runnings called feints where more oily compounds are vaporised, are both channelled off to be redistilled when mixed with the low wines in the next batch.
+                        Only the pure centre cut, or heart of the run, which is about 68% alcohol by volume is collected in the spirit receiver.</p>
+                        <a href="#top">Go To Top</a>
+                      </div>
+                </div>
+                <a id="Maturation"></a>
+                <div class="stage-container">
+                    <img src="images/Maturation.jpg" alt="">
+                      <div class="stage-text">
+                        <h2>STAGE 05: <br> <b>Maturation</b></h2>
+                        <p>Nearly all whiskies are aged in wood—usually oak—containers. One notable exception is corn whiskey, which may be aged or unaged. Bourbon, rye, and other types of American whiskey must be aged in new charred oak barrels, while for other countries’ styles, the type of oak and its previous use are generally left up to the producer. Barrels are stored in warehouses, and as the whisky matures, some of the alcohol evaporates: This is known as the angels’ share, and it creates a distinct (and lovely) smell in the warehouse. Some whiskies, such as scotch, have a required minimum age.
+                        </p>
+                        <a href="#top">Go To Top</a>
+                      </div>
+                </div>
+    </main>
+    <footer>
+        <p>Whiskers is a registered trademark
+          © 2020 World Whisky Day</p>
+          <div class="social">
+            <a target="_blank" href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+            <a target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+          </div>
+      </footer>
+</body>
+</html>

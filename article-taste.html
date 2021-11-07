@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/f2abbed0d4.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media-queries.css">
+<script src="/js/default-data.js"></script>
+<script src="js/cart.js"></script>
+<script defer src="js/navbar.js"></script>
+    <title>Whiskers</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="home.html">Whiskers</a>
+      <ul id="outer-links">
+        <li class="nav-item dropdown" id="cart-icon" data-toggle="modal" data-target="#cart-modal" aria-haspopup="true"
+          aria-expanded="true">
+          <a href="#!" class="nav-link navbar-link-2 waves-effect">
+            <span class="badge badge-pill red">0</span>
+            <i class="fas fa-shopping-cart pl-0"></i>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item dropdown avatar">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="" class="rounded-circle" style="height: 34px;" alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="user.html">Profile</a>
+            <a class="dropdown-item" href="#!" onclick="Disconnect()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+        aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="basicExampleNav1">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a href="home.html" class="nav-link waves-effect">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link waves-effect">
+              Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taste.html" class="nav-link waves-effect">
+              Taste
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link waves-effect">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link waves-effect">
+              About Us
+            </a>
+          </li>
+          <span id="not-logged">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect nav-login">
+                Login
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a href="register.html" class="nav-link waves-effect nav-register">
+                Register
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+    </nav>
+    <div class="modal fade" id="cart-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4 id="cart-msg" class="cart-msg"></h4>
+            <h4 id="empty-cart">Your Cart Is Empty...</h4>
+            <div class="cart-desc">
+              <b>Item</b>
+              <b>QTY</b>
+              <b>Price</b>
+            </div>
+            <div id="cart-items">
+              
+              <!-- <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p id="qty">1</p>
+                <div class="price">
+                  <p class="crossed-price">120$</p>
+                  <p class="sale-price">100$</p>
+                </div>
+              </div>
+              <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p>3</p>
+                <p>120$</p>
+              </div> -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="cart-total">
+              <h5>Total:</h5>
+              <h5 id="total-qty"></h5>
+              <h5 id="total-price">123$</h5>
+            </div>
+            <div id="cart-btns">
+              <button type="button" class="btn btn-secondary" onclick="ClearCart()">Clear</button>
+              <button type="button" class="btn btn-primary" onclick="BuyCart()">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main id="article-container">
+        <article>
+            <h1>How To Properly Taste Whisky</h1>
+            <h3>by Harvey Spector</h3>
+            <hr>
+            <h2>
+              To Really Maximaize Your Whisky Tasting Experiance First Youll Need To Have Some Basic Knowladge Abbout Whisky All Together And Scotch In Preticular.
+            </h2>
+            <img class="article-header-img" src="images/whisky-teasting.jpg" alt="">
+            <p>
+              Glenmorangie’s Brendan McCarron shares his tasting techniques over a glass of the limited-edition Glenmorangie Astar 2017.
+
+              A chat with Brendan McCarron over a glass of Glenmorangie or Ardbeg—he is the Head of Maturing Whisky Stocks for the company—sheds the stuffy, highfalutin image as his boyish enthusiasm for the Scottish spirit shines through. With some helpful tips for appreciating whisky, McCarron shows us how a dram after dinner might be sweeter than a dessert of ice cream and crème brûlée. <br>
+            </p>
+              <h4>Whisky, Bourbon, Scotch—what’s the difference?</h4>
+            <p>
+              In essence, whisky is an alcohol distilled from fermented grain mash; therefore, bourbon, made from corn, and Scotch, made from malted barley, are both whiskies. However, Scotch is made in Scotland, and bourbon is made in America.
+              
+              But as McCarron explains, Scotch and bourbon share an interesting relationship: “Historically, the bourbon industry uses each cask once, so there was a market to buy used casks from America. Using new casks for bourbon suits the nature of bourbon and also takes the edge off and seasons the cask, making it perfect for aging whisky afterwards.”
+
+              When a bourbon cask is brought to Scotland and filled with whisky for the first time, it is called a first fill cask, and these first fill casks are considered most interesting because it extracts the strongest flavors from the wood.
+            </p>
+
+            <h4>Let's talk about the relationship between wood and whisky.</h4>
+            <p>
+              In 2008, Glenmorangie released the Astar, a limited-edition single malt whisky entirely matured in oak casks from the
+              <img id="article-img-left" class="img-modal" src="images/article-taste-palte.jpg"  data-toggle="modal" data-target="#exampleModalCenter" alt="">
+              Ozark mountains of Missouri. McCarron was a fan of the
+              original and longed to revisit the single malt’s unique character. But casks designed to such precise specifications require many years and much dedication to create.
+              “The whole thing is a very controlled process,” explains McCarron. “We own these slow-growing trees in America that grow very straight and tall and after we fell them, they are seasoned for two years so all the flavors are kept in the wood. Once they are made into casks, we heavily toast them and lightly char them, completely in control of what these casks are going to do, and fill them with bourbon for four years exactly—almost to the second—and this makes the casks as perfect as they can be, only then does the Glenmorangie spirit go in.”
+              
+              It has taken almost a decade for Glenmorangie to orchestrate the whisky’s return and McCarron takes us through a tasting of the newly-released Astar 2017. “The Astar uses designer first fill casks. Even the Glenmorangie Original only uses the casks twice, other whiskies might use them up to six times. So, the Astar is like the Original on steroids, a pumped-up version of the Original.”
+            </p>
+            <h4>Scotch Whisky Regions</h4>
+            <p>
+              There are five that remain undisputed: 
+              <b>Speyside, Highlands & Islands, Lowlands, Islay, and Campbeltown.</b> 
+              The Islands are often considered a region on its own, but they are actually part of the Highlands. We've opted to consider it the sixth region as their flavor profiles are quite different to those in the Highlands on the mainland.
+            </p>
+                
+            <img class="article-header-img" src="images/article-regions.jpg" alt="">
+            <hr>
+            <h4>Highlands</h4>
+            <ul>
+              <li>Most famous Highlands Whisky: Dalmore and Glenmorangie</li>
+              <li>Number of distilleries: Over 25</li>
+              <li>Typical Highland flavours: Fruit Cake, Malt, Oak, Heather, Dried Fruit and Smoke</li>
+            </ul>
+            <p>
+              The Highlands is Scotland's largest whisky producing area, covering anywhere from the north of Glasgow (the Clyde estuary to the River Tay) all the way to Thurso in the north, not to mention the east and west regions excluding Speyside. Due to the large area, whisky in the Highlands is very diverse and offers a vast amount of different flavours so it's hard to put a certain style on Whisky from this region. It's easier to split the Highlands into four subregions, north, east, south and west. Each of these subregions has its own style.
+              <br>
+            </p>
+            <hr>
+            <h4>Speyside </h4>
+            <ul>
+              <li>Most famous Speyside Whisky: Macallan, Dalwhinnie, Glenlivet and Glenfiddich</li>
+              <li>Number of distilleries: Over 60</li>
+              <li>Typical Speyside flavours: Apple, Vanilla, Oak, Malt, Nutmeg and Dried Fruit</li>
+            </ul>
+            <p>
+              The region of Speyside is located in the north east of Scotland surrounding the River Spey, it's a sub-region to the neighbouring Highlands because of the high density of distilleries in the area. It's home to the highest number of distilleries in Scotland with well over 60 at present.
+              Speyside is known for its wide range of whiskies displaying different characters, famously for sweet single malts with either very little peat or absolutely no peat present at all. Because of this style, Speyside tends to be a good entry level for those beginning their Whisky adventure as they allow the user to discover their favourite tastes when it comes to drinking single malts.
+            </p>
+            <hr>
+            <h4>Lowlands </h4>
+            <ul>
+              <li>Most famous Speyside Whisky: Auchentoshan, Glenkinchie</li>
+              <li>Number of distilleries: Under 5</li>
+              <li>Typical Lowland flavours: Grass, Honeysuckle, Cream, Toffee, Toast and Cinnamon</li>
+            </ul>
+            <p>
+              Lowlands is the second biggest whisky region in terms of the area it covers, but it's currently only home to fewer than five distilleries. The Lowlands region covers the south of Scotland up to the north of Glasgow and Edinburgh where it meets the border on the Highlands, the line follows the old county borders running from the Clyde estuary in the west to the River Tay in the east, anything south of this is to the border with England is classified as the 'Lowlands' in whisky terms.
+              Lowlands whiskies tend to be light and gentle with no peatiness, unlike any other region they were once all triple distilled, only Auchentoshan uses this technique now for all of its production. Due to the inland location of the distilleries, there is little salinity within the Whisky, because of this Lowland Whiskies are a great entry into malt whisky.
+            </p>
+            <hr>
+            <h4>Campbeltown  </h4>
+            <ul>
+              <li>Most famous Speyside Whisky: Glengyle and Springbank</li>
+              <li>Number of distilleries: Under 5</li>
+              <li>Typical Campbeltown flavours: Brine, Smoke, Dried Fruit, Vanilla and Toffee</li>
+            </ul>
+            <p>
+              Campbeltown is part of mainland Scotland but it's found at the foot of the Mull of Kintyre and was once a thriving whisky hotspot with over 34 distilleries, however it's now home to just 3. Once at a high of 34, a slump in the 1850’s meant this number was halved and what followed was a calamitous fall from grace for Campbeltown. A mixture of improved transportation links to the rival distilleries in the north and a decline in quality as distillers cut corners for mass-production resulting in an inferior product.
+              Today, Campbeltown Whisky is known for its dryness and sometimes pungency taste because of its location, the region sticks out of the mainland and is actually closer to neighbouring islands Arran and Islay than any other mainland producer.
+            </p>
+            <hr>
+            <h4>Islay</h4>
+            <ul>
+              <li>Most famous Islay Whisky: Ardbeg, Laphroaig, Lagavulin and Bruichladdich</li>
+              <li>Number of distilleries: Under 10</li>
+              <li>Typical Islay flavours: Seaweed, Brine, Carbolic Soap, Apple, Smoke and Kippers</li>
+            </ul>
+            <p>
+              The Scottish island of Islay (pronounced eye-luh) is located to the west of the mainland and is the smallest Whisky region in terms of area coverage in Scotland. Even though it's a relatively small island, Islay is currently home to 8 distilleries, 3 of which are World famous, Ardbeg, Laphroaig and Lagavulin.
+              The region is known for its peaty single malts and it's believed that whisky distillation reached Scotland from Ireland via Islay in the 13th century, hence the high number of past and present distilleries on the island.
+            </p>
+            <hr>
+            <h4>Islands</h4>
+            <ul>
+              <li>Highland Park, Talisker and Jura</li>
+              <li>Number of distilleries: Under 10</li>
+              <li>Typical Island flavours: Smoke, Brine, Oil, Black Pepper and Honey</li>
+            </ul>
+            <p>
+              Scotch produced on the islands surrounding the mainland of Scotland offer a very diverse and different taste, they're not however recognised by the Scotch Whisky Association but are easily grouped together for geographic reasons as one as they're all islands.
+              There are nearly 800 islands off of Scotland’s coastline with only a few are actually inhibited, it's easy to see why the varying style differentiates from North to South. Of the inhibited islands, Orkney has 2 whisky distilleries, Scapa and Highland Park, Lewis & Harris is home to Abhainn Dearg, Talisker is located on Skye, Tobermory on Mull with Jura and Arran located on their namesake islands. Although diverse in flavours, peat and salinity are found in all of the Islands whiskies, the latter because of the vicinity to the sea.
+            </p>
+            <h1>
+              Tasting Guidelines
+            </h1>
+            <h2>
+              Finally After Learning Some Theory We Can Start Drinkning,
+              To Get Head Of Yourself Start Slowly And Clear Your Mind,
+              Clean Your Mouth From Forgin Tastes And Dont Forget To Enjoy!
+            </h2>
+            <hr>
+            <div class="article-tasting">
+              <div>
+            <h4>1. <br> Appearance, color and observations</h4>
+            <p>Swirl the spirit in the glass. Observe the color, clarity and legs (the tear-dropped streaks that run down the glass). Slower dripping legs indicate a higher viscosity which may be an indicator of age.</p>
+          </div>
+          <div> 
+            <h4>2. <br> Nose, aroma and Memories</h4>
+            <p>Give the spirit time to breathe. Swirl the spirit in the class. Always nose spirits with your mouth open to help the aroma roll through your olfactory organ. Holding your glass level, smell with your nose in the center of the glass.</p>
+          </div>
+          <div> 
+            <h4>3. <br> Palate, relax and taste</h4>
+            <p>This is the initial arrival of the spirit on the palate. Different regions of the tongue detect different tastes: sweet (on the tip) salty and sour (at the sides) and dry/bitter (at the rear). Allow the spirit to flow completely over the tongue and linger a moment as the sensory receptors work at various speeds, sending signals to the brain at varying rates.</p>
+          </div>
+          <div> 
+            <h4>4. <br> Finish and Balance</h4>
+            <p>After a few seconds, the finish and balance can be described by answers to the following questions:
+              What is left on the palate? Is the palate clean and simple?
+              Is there some complexity? What can be observed after five or ten seconds? Did the whisky have a long or a short finish?</p>
+          </div>
+          </div>
+        </article>
+    </main>
+    <footer>
+      <p>Whiskers is a registered trademark
+        © 2020 World Whisky Day</p>
+        <div class="social">
+          <a target="_blank" href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+          <a target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+          <a target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+          <a target="_blank" href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Whisky Palate Wheel</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="images/article-taste-palte.jpg" style="width: 100%;" alt="">
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+</body>
+</html>

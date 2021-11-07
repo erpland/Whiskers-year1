@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/f2abbed0d4.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media-queries.css">
+<script src="/js/default-data.js"></script>
+<script src="js/cart.js"></script>
+<script defer src="js/navbar.js"></script>
+    <title>Whiskers</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="home.html">Whiskers</a>
+      <ul id="outer-links">
+        <li class="nav-item dropdown" id="cart-icon" data-toggle="modal" data-target="#cart-modal" aria-haspopup="true"
+          aria-expanded="true">
+          <a href="#!" class="nav-link navbar-link-2 waves-effect">
+            <span class="badge badge-pill red">0</span>
+            <i class="fas fa-shopping-cart pl-0"></i>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item dropdown avatar">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="" class="rounded-circle" style="height: 34px;" alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="user.html">Profile</a>
+            <a class="dropdown-item" href="#!" onclick="Disconnect()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+        aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="basicExampleNav1">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a href="home.html" class="nav-link waves-effect">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link waves-effect">
+              Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taste.html" class="nav-link waves-effect">
+              Taste
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link waves-effect">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link waves-effect">
+              About Us
+            </a>
+          </li>
+          <span id="not-logged">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect nav-login">
+                Login
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a href="register.html" class="nav-link waves-effect nav-register">
+                Register
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+    </nav>
+    <div class="modal fade" id="cart-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4 id="cart-msg" class="cart-msg"></h4>
+            <h4 id="empty-cart">Your Cart Is Empty...</h4>
+            <div class="cart-desc">
+              <b>Item</b>
+              <b>QTY</b>
+              <b>Price</b>
+            </div>
+            <div id="cart-items">
+              
+              <!-- <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p id="qty">1</p>
+                <div class="price">
+                  <p class="crossed-price">120$</p>
+                  <p class="sale-price">100$</p>
+                </div>
+              </div>
+              <div class="cart-item">
+                <b class="cart-item-remove">X</b>
+                <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+                <p class="item-cart-price">Auchentoshan 18</p>
+                <p>3</p>
+                <p>120$</p>
+              </div> -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="cart-total">
+              <h5>Total:</h5>
+              <h5 id="total-qty"></h5>
+              <h5 id="total-price">123$</h5>
+            </div>
+            <div id="cart-btns">
+              <button type="button" class="btn btn-secondary" onclick="ClearCart()">Clear</button>
+              <button type="button" class="btn btn-primary" onclick="BuyCart()">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main id="article-container">
+        <article>
+            <h1>HOW TO IMPROVE YOUR WHISKY NOSE</h1>
+            <h3>by Harvey Spector</h3>
+
+            <hr>
+            <h2>
+              Improving your whisky nose takes time and practice, but it’s worth it. Knowing how to nose a whisky better will help take the experience to another level, allowing you to shine a spotlight on the many layers that form its complex character. Once identified with the nose, it becomes easier to pick out the individual flavours of the whisky with your mouth; be it a rich caramel, delicate floral notes or the smooth vanilla holding it all together. Follow these six simple rules and your whisky nose will have considerably improved.
+            </h2>
+            <img class="article-header-img" src="images/nosing.jpg" alt="">
+            
+            <p>
+              The key to nosing (and subsequently tasting) a dram of whisky lies in the ability to forget, to become a blank slate. This is because humans are, on the whole, rather easily influenced. For example, tell someone not to think about a phrase like ‘glorious Scottish ginger hair’ and the chances are they’ll think of nothing else. Likewise, reading a label or studying some tasting notes that describe a whisky as “sweet with notes of lemon” may inadvertently make it difficult to find anything but these flavours.
+
+              Discovering the aromas of a whisky without any direction is not only more fulfilling, but it also helps hone your whisky nose far better. Since everyone’s palate is different, different flavours may initially stand out more – it’s all part of the rewarding learning process. If you identify an aroma or flavour, take time to elaborate on it. Is that lemon ripe, fresh, canned, candied or caramelised? The more specific you can be the better your taste buds will become at defining the flavours in the future. Before you know it, you’ll be penning elaborate tasting notes of your own, ruminating on new and exciting discoveries in the nose of your favourite expressions.
+                <span class="quoate-right">
+                    "The Key Lies In The Ability To Forget, To Become A Blank Slate..."
+                </span>
+                There’s no rush when it comes to nosing a scotch whisky. Anyone who says different is either a liar or very late for a wedding anniversary. It’s unlikely that the first attempt will yield more than a few notes, often just an overriding indication of what’s to come. Waiting a few moments then trying again will help begin to unravel the enigma of a good scotch whisky. On the third pass try comparing the aromas to that of the previous try and notice how new secrets come to the fore. A dram of Kilchoman can be more complex than others, holding on to their intricate flavours for longer. Think of it as a reward for the most dedicated and appreciative drinkers.
+                A misconception many people have is that things smell the same regardless of the nostril being used. But in actual fact, due to the way your brain is wired, closing one nostril while breathing in through the other results in a completely different experience. Try this approach when nosing a scotch whisky to truly appreciate the breadth of the notes within. You can think of it like wearing those old-school 3D glasses: only by closing each eye separately can you see the individual red and blue layers that form the full picture.
+                <img  id="article-img-left" src="images/article-nose.jpg" alt="">
+                On a similar theme, the mouth is more than just a yawning chasm for food and drink. While tasting, a true connoisseur will take time to notice how the whisky interacts with every component. From the tingle on the gums to the way it differentiates itself on the back of the tongue. It’s not simply an exercise in pouring and swallowing; it’s about taking the whisky into yourself, from nose, to lips, to tongue, to chest, and eventually to heart and mind.    
+                If you’re lucky enough to have a friend that drinks scotch whisky, why not steal some of theirs and take a break from the whisky you’re trying to nose? Think of it as a relaxing change of scene. Compare the two whiskies – taking time to consider the differences and similarities. Using two polar opposite whiskies, such as a light delicate 100% Islay and a dark and strong Loch Gorm can be a good starting point. It helps you pin down the qualities that unite and separate the nose of each whisky.
+
+                Over time, bring the two styles of whisky closer together. With a little practice you’ll soon sit agape at the thought that two whiskies you once considered so similar could in fact be so different. Another good approach is to use a whisky you’re already familiar as a benchmark of sorts: “is the other style more or less honeyed?” is a question you might ask yourself, out loud or internally – it doesn’t make a difference. Challenge yourself to discern what exactly makes the aroma of a whisky unique, what makes the nosing experience so enjoyable.   
+                <!-- <span class="quoate-left">
+                  "Don’t worry if you can’t pick out the notes of ‘crispy biscuit’ or ‘enamel paint’..."
+              </span> -->
+                Life is too short for enemies. Go find your whisky friend and use your buddy as a sounding board – share a few drams and compare the notes and aromas you each notice in the glass. Perhaps they will be in total agreement with you, perhaps they will take the opposite stance. More likely though, they’ll be able to identify characteristics that you’ve overlooked or have been unable to identify with your own nose. You’ll also be able to do likewise for them – let’s not forget that friendship’s a two-way street!
+                Amongst everything, it can be easy to forget that a good scotch whisky is all about enjoying the moment. Don’t worry if you can’t pick out the notes of ‘crispy biscuit’ or ‘enamel paint’. Every set of tastes is subjective and there is no right or wrong to this process. Practicing every day – whether it be picking apart the scents of a warm summer breeze or treating your nostrils to a glistening dram of Sanaig– is sure to improve your whisky nose over time. It could take a while to become a master but, as they say, life is about the journey – a journey best lived in the slow lane.  
+            </p>
+            <h1>WHISKY NOSING IN 7 SIMPLE STEPS</h1>
+            <img class="article-header-img" src="images/article-nose-header.jpg" alt="">
+            <h4>1. Know Your Geography</h4>
+            <p>
+              It’s good idea to first familiarise yourself with the general characteristics of the world’s whisky regions. Scotland alone is split up into six, each with their own aromatic traits. Speyside whiskies, for example, tend to be redolent with succulent, sherried notes, while those made on Islay pack big, smoky, maritime punches. Ireland, Kentucky, India – most whisky producing regions have trademark styles which are useful to consider when trying a whisky for the first time.
+            </p>  
+            <hr>
+            <h4>2. Choose The Right Glassware</h4>
+            <p>
+              Stay with us – a tulip-shaped glass really does work best for nosing whisky. The wide base gives the dram surface space to breath, while the tapered neck channels the aromas and alcohol upwards. Not convinced? Pour out two identical measures, one in a Glencairn, a ‘copita’ glass or even a wine glass, and one in a regular tumbler. Now give them a nose.
+            </p>  
+            <hr>
+            <h4>3. Give It A Swirl</h4>
+            <p>
+              Hold your glass by the base or the stem and give it a swirl. Gently does it, or you’ll end up wearing your whisky. By agitating the whisky you’ll have opened up the aromas even more. You could also place your hand over the glass and give it a brief shake. Then, rub your hands together until dry and give them a smell – you’ll think you’re standing in a field of barley.
+            </p>  
+            <hr>
+            <h4>4. Take A Sniff</h4>
+            <p>
+              Don’t be afraid to get your nose right into the glass, but don’t go overboard when inhaling. To avoid ‘nose prickle’, keep your lips parted when breathing in through your nose. Warm the glass in your hands to help release the aromas.
+            </p>  
+            <hr>
+            <h4>5. Let The Scent Stir Memories</h4>
+            <p>
+              What does the smell remind you of? Burnt toast at breakfast time? The ‘jeelie pan’ full of strawberry jam? Home on Christmas eve? The tide going out? Then say so! Our scent memory is phenomenally good, and great for helping us decipher certain aromas. It’s much easier to recognise them when you’ve got a reference point, no matter how personal or abstract.
+            </p>  
+            <hr>
+            <h4>6. Pick Apart What You Can Smell</h4>
+            <p>
+              Now you can try and get a bit more specific. When it comes to Scotch, there are generally eight umbrella aromas. These are: cereal, fruity, floral, peaty, feint, sulphur, woody and winey. Bourbon has its own set of umbrella aromas. It’s well worth seeking out ‘wheels’ like these and using them while sitting down with a dram. Even though they highlight possible flavours in whisky, they’re excellent for guiding your nose too. The most important thing to remember is that whisky is entirely subjective; there are never any wrong answers.
+            </p>  
+            <hr>
+            <h4>7. Relax</h4>
+            <p>
+              Whisky is for drinking and enjoying. Sure, there are some drams out there that might demand some attention, but the process of sitting down with a dram should never feel like an exam. Don’t stress about ‘learning’ individual aromas – what we’ve provided are merely guides for prompting your nose. With a little practice and patience you’ll start recognising aromas on impulse – all adding to the experience. So relax, pour yourself a dram and, most important of all, enjoy.
+            </p>  
+            <hr>
+        </article>
+    </main>
+    <footer>
+      <p>Whiskers is a registered trademark
+        © 2020 World Whisky Day</p>
+        <div class="social">
+          <a target="_blank" href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+          <a target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+          <a target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+          <a target="_blank" href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

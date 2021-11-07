@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+
+  <script src="https://kit.fontawesome.com/f2abbed0d4.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media-queries.css">
+  <script src="js/cart.js"></script>
+  <script src="/js/default-data.js"></script>
+  <script defer src="js/navbar.js"></script>
+  <script src="js/israel-cities.js"></script>
+  <script src="/js/user.js"></script>
+  <script src="/js/input-validation.js"></script>
+  <script src="/js/register/function.js"></script>
+  <script defer src="js/register/main.js"></script>
+
+  <title>Whiskers</title>
+</head>
+
+<body>
+  <div class="spinner-div">
+    <div class="spin-wrap">
+      <div class="spinner-element"></div>
+    </div>
+  </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="home.html">Whiskers</a>
+      <ul id="outer-links">
+        <li class="nav-item dropdown" id="cart-icon" data-toggle="modal" data-target="#cart-modal" aria-haspopup="true"
+          aria-expanded="true">
+          <a href="#!" class="nav-link navbar-link-2 waves-effect">
+            <span class="badge badge-pill red">0</span>
+            <i class="fas fa-shopping-cart pl-0"></i>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item dropdown avatar">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="" class="rounded-circle" style="height: 34px;" alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="user.html">Profile</a>
+            <a class="dropdown-item" href="#!" onclick="Disconnect()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+        aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="basicExampleNav1">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a href="home.html" class="nav-link waves-effect">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link waves-effect">
+              Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="taste.html" class="nav-link waves-effect">
+              Taste
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link waves-effect">
+              Shop
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link waves-effect">
+              About Us
+            </a>
+          </li>
+          <span id="not-logged">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect nav-login">
+                Login
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a href="register.html" class="nav-link waves-effect nav-register">
+                Register
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+    </nav>
+    <div class="modal fade" id="cart-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4 id="cart-msg" class="cart-msg"></h4>
+            <h4 id="empty-cart">Your Cart Is Empty...</h4>
+            <div class="cart-desc">
+              <b>Item</b>
+              <b>QTY</b>
+              <b>Price</b>
+            </div>
+            <div id="cart-items">
+
+              <b class="cart-item-remove">X</b>
+              <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+              <p class="item-cart-price">Auchentoshan 18</p>
+              <p id="qty">1</p>
+              <div class="price">
+                <p class="crossed-price">120$</p>
+                <p class="sale-price">100$</p>
+              </div>
+            </div>
+            <div class="cart-item">
+              <b class="cart-item-remove">X</b>
+              <img src="images/shop/auchentoshan-18-yo-ps.jpg" alt="">
+              <p class="item-cart-price">Auchentoshan 18</p>
+              <p>3</p>
+              <p>120$</p>
+            </div> -->
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div id="cart-total">
+            <h5>Total:</h5>
+            <h5 id="total-qty"></h5>
+            <h5 id="total-price">123$</h5>
+          </div>
+          <div id="cart-btns">
+            <button type="button" class="btn btn-secondary" onclick="ClearCart()">Clear</button>
+            <button type="button" class="btn btn-primary" onclick="BuyCart()">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+  <main id="register-container">
+    <div class="main-div">
+      <div class="progress-steps">
+        <div id="progress"></div>
+        <div class="steps"><small>Step 1</small></div>
+        <div class="steps"><small>Step 2</small></div>
+        <div class="steps"><small>Step 3</small></div>
+      </div>
+
+      <form id="page1" class="pages">
+
+        <div class="form">
+          <h2>Account Info</h2>
+          <hr>
+          <div class="all-fields">
+            <div class="input-field">
+              <label for="username">Username</label>
+              <input type="text" id="username" placeholder="User Name" maxlength="60">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Email">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="password">Password</label>
+              <input type="password" id="password" list="#list" placeholder="Password" data-toggle="popover"
+                data-placement="bottom" data-content="8 hfhfhf" data-html="true" date-trigger="focus">
+              <i id='showPassword' class="far fa-eye-slash"></i>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="passwordConfirm">Confirm Password</label>
+              <input type="password" id="passwordConfirm" list="#list" placeholder="Confirm Password" minlength="7"
+                maxlength="12" style="margin-bottom: 120px;">
+              <i id='showPasswordConfirm' class="far fa-eye-slash"></i>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+          </div>
+          <div id="btnDiv">
+            <hr>
+            <div class="msg">
+            </div>
+            <span></span>
+            <button class="submit-button" id="btnNext1" type="button"> Next </button>
+          </div>
+        </div>
+      </form>
+
+      <form id="page2" class="pages">
+        <div class="form">
+          <h2>Personal Info</h2>
+          <hr>
+          <div class="all-fields">
+            <div class="input-field">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="First Name">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Last Name">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="birthday">Birthday</label>
+              <input type="date" id="birthday" min="" max="" placeholder="Birthday">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="City" list="cities-list">
+              <datalist id="cities-list"></datalist>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="street">Street</label>
+              <input type="text" id="street" placeholder="Street">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+            <div class="input-field">
+              <label for="houseNumber">Number</label>
+              <input type="number" id="houseNumber" min="1" placeholder="House Number">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error Msg</small>
+            </div>
+          </div>
+          <div id="btnDiv">
+            <hr>
+            <div class="msg">
+            </div>
+            <button class="submit-button" id="btnBack1" type="button">Back</button>
+            <button class="submit-button" id="btnNext2" type="button">Next</button>
+          </div>
+        </div>
+      </form>
+
+      <form id="page3" class="pages">
+        <div class="form">
+          <h2>Profile Picture</h2>
+          <hr>
+          <!-- <div class="all-fields"> -->
+          <div class="img-field">
+            <label for="image" id="user-image-label">
+              <input type="file" name="image" id="image" style="display:none;" accept="image/*" />
+              <i id="overlay" class="fas fa-camera"></i>
+              <img id="profileImg" src="images/emptyuser.png" />
+            </label>
+            <div class="name-icons">
+              <div class="msg-icons">
+              </div>
+              <h3>You Name</h3>
+            </div>
+            <div class="img-msg">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Errorrrrr</small>
+            </div>
+          </div>
+          <div id="btnDiv">
+            <hr>
+            <div class="msg">
+
+            </div>
+
+            <button class="submit-button" id="btnBack2" type="button">Back</button>
+            <button class="submit-button" id="btnSubmit" type="button">Finish</button>
+          </div>
+          <!-- </div> -->
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>Whiskers is a registered trademark
+      © 2020 World Whisky Day</p>
+    <div class="social">
+      <a target="_blank" href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a target="_blank" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a target="_blank" href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a target="_blank" href="http://youtube.com"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

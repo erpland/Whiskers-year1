@@ -1,0 +1,31 @@
+// @mixin box-radius-left{
+//     border-top-left-radius: 20px;
+//     border-bottom-right-radius: 20px;
+// }
+// @mixin box-radius-right {
+//     border-top-right-radius: 20px;
+//     border-bottom-left-radius: 20px;
+    
+// }
+@mixin button {
+    height: 50px;
+    // width:40%;
+    outline: none;
+    color: color(color-secondary);
+    background-color: color(color-buttons);
+    font-family: font(sans);
+    font-size: 1.1m;
+    border-radius: 50px;
+    border: none;
+    user-select: none;
+    &:hover{
+       background-color: transparent;
+       border:1px solid color(color-buttons);
+        color: color(color-buttons);
+    }
+    // &:active{
+    //     border-color: color(color-accent);
+    //     color: color(color-accent);
+    // }
+    
+}
