@@ -1,4 +1,6 @@
 # Whiskers-year1
-Ruppin 2021 Year 1 Final Project For Web.
+Responsive Whiksey portal and store.
+Ruppin 2021 Year 1 Final Project For Web class.
 HTML SASS JS - Local Storage/Session Storage.
-Responsive with media queries
+
+link in the description
